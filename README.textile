@@ -1,0 +1,14 @@
+h1. dropbox_chooser
+
+h2. First Step
+
+Create an app key from https://www.dropbox.com/developers/apps
+
+# Create an app
+# Choose Dropbox Chooser
+# Enter App name and Domain(s)
+# Create app
+
+h2. Install Dropbox Chooser
+
+In Settings, enter and save Your App Key.
