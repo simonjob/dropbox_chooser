@@ -1,15 +1,11 @@
-$(document).ready(function() {
-
 $("#db-chooser").on("DbxChooserSuccess", function(evt) {
     $("#dropbox-chooser-urls").empty();
     var files = evt.originalEvent.files;
-	$links = makeLinks(files);
-    $("#dropbox-chooser-urls").append($links);
+	var links = makeLinks(files);
+    $("#dropbox-chooser-urls").append(links);
 });
 
-});
-
-function makeLinks() {
+function makeLinks(files) {
 	for(var i=0; i<files.length; i++) {
         $link = $('<a/>', {
             'href': files[i].link,
@@ -17,9 +13,5 @@ function makeLinks() {
             'target': "blank_"
         }).append("<br/>")
     }
-	
+	return($link);
 }
-
-
-
-*/

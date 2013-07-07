@@ -4,8 +4,10 @@ class Dropbox_chooser_ft extends EE_Fieldtype {
 	
 	var $info = array(
 		'name'		=> 'Dropbox Chooser',
-		'version'	=> '0.1'
+		'version'	=> '0.2'
 	);
+	
+	var $has_array_data = TRUE;
 	
 	// --------------------------------------------------------------------
 	
@@ -64,16 +66,7 @@ class Dropbox_chooser_ft extends EE_Fieldtype {
 	{
 		
 		$r = '';
-		$r = $data;
-
-		// Unserialize the photo data
-/*		$picArray = unserialize(urldecode($data));
-		$pic = $picArray[0];
-		
-		$r = '';
-		
-		$r .= $pic;*/
-		
+		$r = $data;		
 		return $r;
 
 	}
@@ -132,10 +125,10 @@ class Dropbox_chooser_ft extends EE_Fieldtype {
 		$link_type	= isset($data['link_type']) ? $data['link_type'] : $this->settings['link_type'];
 		$your_app_key		= isset($data['your_app_key']) ? $data['your_app_key'] : $this->settings['your_app_key'];
 
-		$this->EE->table->add_row(
+/*		$this->EE->table->add_row(
 			lang('multiselect_label', 'multiselect'),
 			form_checkbox('multiselect', 'multiselect', $multiselect)
-		);
+		);*/
 		
 		$this->EE->table->add_row(
 			lang('link_type_label', 'link_type'),
@@ -144,18 +137,7 @@ class Dropbox_chooser_ft extends EE_Fieldtype {
 			form_radio('link_type', 'direct', ($link_type == 'direct')?TRUE:FALSE , 'id="link_type_direct"') . ' ' . 
 			form_label(lang('link_type_direct'), 'link_type_direct')
 		);
-		$this->EE->table->add_row(
-			"link_type",$link_type
-		);
-		$this->EE->table->add_row(
-			"multiselect",$multiselect
-		);
-		$this->EE->table->add_row(
-			"preview",($link_type == 'preview')?'checked':'unchecked'
-		);
-		$this->EE->table->add_row(
-			"direct",($link_type == 'direct')?'checked':'unchecked'
-		);
+
 	}
 	
 	// --------------------------------------------------------------------
