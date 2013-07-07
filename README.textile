@@ -12,3 +12,8 @@ Create an app key from https://www.dropbox.com/developers/apps
 h2. Install Dropbox Chooser
 
 In Settings, enter and save Your App Key.
+
+h2. Not yet
+
+* multiselect
+
